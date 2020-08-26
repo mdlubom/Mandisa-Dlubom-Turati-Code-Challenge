@@ -1,3 +1,5 @@
+@import '../node_modules/tailwindcss/tailwind.css';
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -8,7 +10,11 @@
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 30px;
+  box-shadow: 0 3px 9px 0 rgba(0,0,0,0.22);
+  background-color: #fff;
+  border-radius: 10px 10px 40px 10px;
+  margin: 50px 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -16,59 +22,18 @@
   align-items: center;
 }
 
-.footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.main > * {
+  margin-bottom: 30px;
 }
 
-.footer img {
-  margin-left: 0.5rem;
+@media screen and (max-width: 768px) {
+  .main > * {
+    margin-bottom: 15px;
+  }
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.header h1 {
+  color: #ff6347;
 }
 
 .grid {
@@ -81,43 +46,268 @@
   margin-top: 3rem;
 }
 
-.card {
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-}
-
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
+}
+
+/* Radio Button */
+.radioButtonWrap {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.radioButtonWrap label {
+  margin-bottom: 0;
+}
+
+.radioButtonWrap > .label {
+  margin-right: 16px;
+  margin-bottom: 98px;
+  display: block;
+  line-height: unset;
+  padding-bottom: 0;
+}
+
+.radioButtonWrap .radioButton {
+  margin-right: 26px;
+  margin-bottom: 30px;
+  min-height: 50px;
+}
+
+.radioButtonWrap .radioButton .label {
+  line-height: unset;
+  padding-bottom: 0;
+}
+
+.radioButtonWrap .radioButton:last-of-type {
+  margin-right: 0;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:checked,
+.radioButtonWrap .radioButton [type="radio"]:not(:checked) {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 50px;
+  z-index: 100;
+  width: 100%;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:checked + label,
+.radioButtonWrap .radioButton [type="radio"]:not(:checked) + label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 70px;
+  display: inline-block;
+  color: #0f0c0d;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:checked + label:before,
+.radioButtonWrap .radioButton [type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #000;
+  border-radius: 100%;
+  background: transparents;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:hover + label:before {
+  border-color: #ff6347;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:checked:hover + label:before {
+  border-color: #ff6347;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:checked + label:after,
+.radioButtonWrap .radioButton [type="radio"]:not(:checked) + label:after {
+  content: "";
+  width: 31px;
+  height: 32px;
+  background: #ff6347;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  border-radius: 100%;
+  transition: all 250ms ease-in-out;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:hover + label:after {
+  background: #ff6347;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:checked:hover + label:after {
+  background: #ff6347;
+}
+
+.radioButtonWrap .radioButton [type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.radioButtonWrap .radioButton [type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.radioButton .label {
+  margin-bottom: 15px;
+  padding-top: 14px;
+}
+
+.radioButton span {
+  padding-left: 70px;
+}
+
+/* Your challenges */
+
+.your-challenges .container {
+  position: relative;
+}
+
+.your-challenges .h1 {
+  max-width: calc(100% - 150px);
+}
+
+.your-challenges .content {
+  position: relative;
+}
+
+.your-challenges .content > *:not(form) {
+  position: relative;
+  z-index: 100;
+}
+
+
+.your-challenges .content::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -300px;
+  width: 486px;
+  height: 566px;
+  background-image: url('../assets/Icon-Slanty.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.your-challenges .container::before, .your-challenges.challengeOne .container::before {
+  left: 8px;
+  transform: rotate(135deg);
+  right: auto;
+  bottom: 1.59rem;
+  z-index: 100;
+}
+
+.your-challenges .container::before, .your-challenges .container::after {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.your-challenges.challengeOne .container::before, .your-challenges.challengeOne .container::after, .your-challenges.challengeTwo .container::before, .your-challenges.challengeTwo .container::after, .your-challenges.challengeThree .container::before, .your-challenges.challengeThree .container::after {
+  opacity: 1;
+}
+
+.your-challenges .container::after {
+  border-width: 1px 0 1px 1px;
+  left: 0;
+  top: 29rem;
+  height: calc(100% - 32.5rem);
+  transition: top 350ms ease-in-out, height 350ms ease-in-out;
+}
+
+.your-challenges .container::before {
+  bottom: 1.59rem;
+}
+
+.your-challenges.challengeTwo .container::after {
+  top: 53.53rem;
+  height: calc(100% - 57rem);
+}
+
+.your-challenges.challengeThree .container::after {
+  top: 73rem;
+  height: calc(100% - 76.48rem);
+}
+
+.your-challenges.challengeOne .container::after {
+  top: 29rem;
+  height: calc(100% - 32.5rem);
+}
+
+.your-challenges .radioButton > * {
+  width: 50%;
+  padding: 5rem 4.6875rem 2.5rem 4.6875rem;
+  z-index: 50;
+  transition: background-color 350ms ease-in-out;
+}
+
+.your-challenges  .radioButton .radio-input {
+  padding-left: 1.875rem;
+  padding-right: 4.5625rem;
+}
+
+.your-challenges  .radioButton.active .radio-input {
+  background-color: rgba(113, 254, 219, 0.15);
+}
+
+.your-challenges .radioButton .solution {
+  transform: translateX(-100%);
+  background-color: #ff6347;
+  opacity: 0;
+  z-index: -1;
+  color: transparent;
+  transition: transform 500ms ease-in-out, color 500ms ease-in-out;
+}
+
+.your-challenges .radioButton.active .solution {
+  background-color: rgba(113 254 219, 0.42);
+}
+
+.your-challenges .solution p {
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+
+.your-challenges .solution p:last-of-type {
+  margin-bottom: 0;
+}
+
+.your-challenges  .radioButton.active .solution {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 1;
+  color: #000;
+}
+
+.iframe {
+  width: 100%;
+  height: 450px;
+}
+
+@media screen and (max-width: 768px) {
+  .iframe {
+    height: 300px;
+  }
+}
+
+.footer {
+  border-top: 1px solid #ff6347;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  text-transform: uppercase;
+  font-weight: 500;
 }
