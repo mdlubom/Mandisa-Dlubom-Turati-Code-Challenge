@@ -48,7 +48,7 @@ export default function Home() {
 
               <ul>
                 <li>
-                  From this challenge I learnt that before jumping into a new project it is key to first take time to learn your required tools or frameworks. It is great to know how to translate design or project requirements in the planning but there also needs top be understanding of the language that will be used to create a successful project.
+                  From this challenge I learnt that before jumping into a new project it is key to first take time to learn your required tools or frameworks. It is great to know how to translate design or project requirements in the planning phase but there is also a need to be understand of the language or tools that will be used to create a successful project.
                 </li>
               </ul>
             </li>
@@ -57,15 +57,15 @@ export default function Home() {
 
         <iframe className={styles.iframe} src="https://www.youtube.com/embed/LkSgxuQrYwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        {/* <div className={styles.formWrapper}>
+         <div className={styles.formWrapper}>
           <form action="#">
             <label for="fname">First name:</label>
-            <input type="text" name="fname" placeholder="Your name"><br/>
+            <input type="text" name="fname" placeholder="Your name"/><br/>
             <label for="lname">Last name:</label><br/>
-            <input type="text" name="lname" placeholder="Your surname"><br><br>
+            <input type="text" name="lname" placeholder="Your surname"/><br/><br/>
             <input type="submit" value="Submit"/>
           </form> 
-        </div> */}
+        </div> 
 
       </main>
 
