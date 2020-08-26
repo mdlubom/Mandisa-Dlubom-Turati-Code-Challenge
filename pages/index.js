@@ -60,7 +60,7 @@ export default function Home() {
          <div className={styles.formWrapper}>
           <form action="#">
             <label for="fname">First name:</label>
-            <input type="text" name="fname" placeholder="Your name"/><br/>
+            <input type="text" name="fname" placeholder="Your name"/>
             <label for="lname">Last name:</label><br/>
             <input type="text" name="lname" placeholder="Your surname"/><br/><br/>
             <input type="submit" value="Submit"/>
